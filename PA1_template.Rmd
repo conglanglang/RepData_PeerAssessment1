@@ -15,7 +15,20 @@ da[,2]<-as.Date(da[,2],format="%Y-%m-%d")
 
 ## What is mean total number of steps taken per day?
 
+1.Calculate the total number of steps taken per day
+```{r echo = TRUE}
+temp<-split(da,da[,c("date")],drop=TRUE) 
+result1<-lapply(temp,FUN=function(x) sum(x$steps)) 
+result2<-lapply(temp,FUN=function(x) max(x$steps)) 
+numofstep<-cbind(result1,result2)
+```
 
+2.Make a histogram of the total number of steps taken each day
+```{r echo = TRUE}
+numofstep[,2]
+ptemp<-hist(numofstep[,1])
+plot(ptemp, col=rgb(0,0,1,1/4), xlim=c(0,10))
+```
 
 ## What is the average daily activity pattern?
 
