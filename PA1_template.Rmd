@@ -1,8 +1,9 @@
 ---
-    title: "Reproducible Research: Peer Assessment 1"
-    output: 
-      html_document:
-    keep_md: true
+title: 'Reproducible Research: Peer Assessment 1'
+output:
+  html_document: null
+  pdf_document: default
+keep_md: yes
 ---
     
     
@@ -26,8 +27,11 @@ numofstep<-cbind(result1,result2)
     
 2.Make a histogram of the total number of steps taken each day
 ```{r echo = TRUE}
-hist(as.numeric(numofstep[,1]),xlab="number of steps",main ="The histogram of the total number of steps")
+png(file = "instructions_fig/hist1.png",width = 480, height = 480, units = "px")
+with(da,hist(as.numeric(numofstep[,1]),xlab="number of steps",main ="The histogram of the total number of steps"))
+dev.off()
 ```
+![hist1](instructions_fig/hist1.png) 
     
 3.Calculate and report the mean and median of the total number of steps taken per day
 ```{r echo = TRUE}
