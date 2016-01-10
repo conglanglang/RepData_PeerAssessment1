@@ -252,7 +252,7 @@ numofstep_report_fill</code></pre>
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 <p>1.Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.</p>
 <pre class="r"><code>library(timeDate)</code></pre>
-<pre><code>## Warning: package 'timeDate' was built under R version 3.2.3</code></pre>
+<pre><code>## Warning: package 'timeDate' was built under R version 3.1.3</code></pre>
 <pre class="r"><code>da_fill[isWeekday(da_fill[,2],wday = 1:5),4]=&quot;weekday&quot;
 da_fill[!isWeekday(da_fill[,2],wday = 1:5),4]=&quot;weekend&quot;
 colnames(da_fill)[4]&lt;-&quot;week&quot;</code></pre>
